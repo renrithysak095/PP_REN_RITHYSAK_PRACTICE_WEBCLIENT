@@ -1,7 +1,7 @@
 package com.example.courseservice.service.implementation;
 
+import com.example.commonservice.model.CourseDto;
 import com.example.courseservice.model.Course;
-import com.example.courseservice.model.dto.CourseDto;
 import com.example.courseservice.model.request.CourseRequest;
 import com.example.courseservice.repository.CourseRepository;
 import com.example.courseservice.service.CourseService;
@@ -47,7 +47,9 @@ public class CourseServiceImpl implements CourseService {
 
         if(updateObj != null){
             updateObj.setCourseName(courseRequest.getCourseName());
-            updateObj.setCourseHeader(courseRequest.getCourseHeader());
+            updateObj.setCourseCode(courseRequest.getCourseCode());
+            updateObj.setDescription(courseRequest.getDescription());
+            updateObj.setInstructor(courseRequest.getInstructor());
             return courseRepository.save(updateObj).toDto();
         }
         throw new RuntimeException();

@@ -1,6 +1,5 @@
-package com.example.courseservice.model.request;
+package com.example.commonservice.model;
 
-import com.example.courseservice.model.Course;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CourseRequest {
+public class CourseDto {
 
+    private Integer id;
     private String courseName;
     private String courseCode;
     private String description;
     private String instructor;
-
-    public Course toEntity(){
-        return new Course(null, this.courseName, this.courseCode,this.description,this.instructor);
-    }
 
 }

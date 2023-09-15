@@ -1,11 +1,11 @@
 package com.example.courseservice.model;
-
-import com.example.courseservice.model.dto.CourseDto;
-import com.example.courseservice.model.request.CourseRequest;
+import com.example.commonservice.model.CourseDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -22,15 +22,22 @@ public class Course {
     @Column(name = "course_name")
     private String courseName;
 
-    @Column(name = "course_header")
-    private String courseHeader;
+    @Column(name = "course_code")
+    private String courseCode;
+
+    @Column(name = "course_description")
+    private String description;
+
+    @Column(name = "course_instructor")
+    private String instructor;
+
 
     public CourseDto toDto(){
-        return new CourseDto(this.id, this.courseName, this.courseHeader);
+        return new CourseDto(this.id, this.courseName, this.courseCode,this.description,this.instructor);
     }
 
     public Course toEntity(){
-        return new Course(null, courseName,courseHeader);
+        return new Course(null, courseName, courseCode,description,instructor);
     }
 
 

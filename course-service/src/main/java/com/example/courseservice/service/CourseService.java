@@ -1,6 +1,5 @@
 package com.example.courseservice.service;
-
-import com.example.courseservice.model.dto.CourseDto;
+import com.example.commonservice.model.CourseDto;
 import com.example.courseservice.model.request.CourseRequest;
 import org.springframework.stereotype.Service;
 
